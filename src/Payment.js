@@ -53,23 +53,23 @@ function Payment() {
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
 
-        // db.collection("users")
-        //   .doc(user?.uid)
-        //   .collection("orders")
-        //   .doc(paymentIntent.id)
-        //   .set({
-        //     basket: basket,
-        //     amount: paymentIntent.amount,
-        //     created: paymentIntent.created,
-        //   });
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
-        // setSucceeded(true);
-        // setError(null);
-        // setProcessing(false);
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
 
-        // dispatch({
-        //   type: "EMPTY_BASKET",
-        // });
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
 
         history.replace("/orders");
       });
@@ -96,8 +96,8 @@ function Payment() {
           </div>
           <div className="payment__address">
             <p>{user?.email}</p>
-            <p>Halsey</p>
-            <p>New Zealand</p>
+            <p>Lynfield</p>
+            <p>NZ</p>
           </div>
         </div>
 

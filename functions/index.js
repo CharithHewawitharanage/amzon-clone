@@ -4,7 +4,6 @@ const cors = require("cors");
 const stripe = require("stripe")(
   "sk_test_51IjCRLJUasgdv8gz97ObvK7ce6xCTxWql2na20HFJfV4EvMitxDlyAksPsev0K1c9c7aWA5dKoUDel4zoMf8CW1b00Pj71nzq1"
 );
-
 // API
 
 // - App config
@@ -35,6 +34,3 @@ app.post("/payments/create", async (request, response) => {
 
 // - Listen command
 exports.api = functions.https.onRequest(app);
-
-// Example endpoint
-// http://localhost:5001/clone-6ba72/us-central1/api
